@@ -1,0 +1,44 @@
+{%load staticfiles%}
+{% extends 'to_do_app/base.html'}
+<html>
+<head>
+	
+	
+</head>
+<body>
+	{%block body}
+
+
+	<div class = "container">
+		<h2> Today's list </h2>
+			<p> Things that must get done</p>
+				<table class="table">
+					<thread>
+						<tr>
+							<th>task name </th>
+							<th>task priority </th>
+							<th>action </th>
+						</tr>
+					</thread>
+
+					<tbody> 
+						{% if task_list %}
+						(% for t in task_list%)
+						<tr class = "active>"
+							<td> <a href={%url 'detail' task.id% }}">{{task.task_name}}</a> </td>
+							<td><b>{{task.task_priority}}</b></td>
+							<button> type = "submit" class = "btn btn-success"<Done</button></td>
+
+						</tr>	
+						{%endfor%}
+						{endif%}
+
+		</ul>	
+	{%else%}
+	{%endif%}
+				</table>
+			</div>					
+
+	{%endblock%}
+</body>
+</html>
